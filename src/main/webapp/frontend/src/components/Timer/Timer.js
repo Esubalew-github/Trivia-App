@@ -14,7 +14,7 @@ function Timer({ expiryTimestamp }) {
 
   return (
     <div style={{textAlign: 'center'}}> 
-     <p>You Have 30 Seconds To Finish This Quiz</p>
+     <p>You Have 2 minutes To Finish This Quiz</p>
       <div style={{fontSize: '20px'}}>
         <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
         </div>
@@ -25,7 +25,7 @@ function Timer({ expiryTimestamp }) {
 
 export default function App() {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 30); // 30 seconds timer
+  time.setSeconds(time.getSeconds() + 120); // 120 seconds timer
   return (
     <div>
       <Timer expiryTimestamp={time} />
