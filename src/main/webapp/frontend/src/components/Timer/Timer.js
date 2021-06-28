@@ -1,8 +1,12 @@
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
 import { useHistory } from "react-router";
+import Question from "../../components/Question/Question";
 
 function Timer({ expiryTimestamp }) {
+  window.addEventListener('keydown', (event) => {
+    <Question/>
+  });
   const history = useHistory();
   const {
     seconds,
@@ -25,7 +29,7 @@ function Timer({ expiryTimestamp }) {
 
 export default function App() {
   const time = new Date();
-  time.setSeconds(time.getSeconds() + 60); // 60 seconds timer
+  time.setSeconds(time.getSeconds() + 60); // 30 seconds timer
   return (
     <div>
       <Timer expiryTimestamp={time} />
