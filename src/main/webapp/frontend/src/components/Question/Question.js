@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import "./Question.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import {decode} from 'html-entities';
 
 const Question = ({
   currQues,
@@ -66,7 +67,7 @@ const Question = ({
       <h1>Question {currQues + 1} :</h1>
 
       <div className="singleQuestion">
-        <h2>{questions[currQues].question}</h2>
+        <h2>{decode(questions[currQues].question)}</h2>
         <div className="options">
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {options &&
