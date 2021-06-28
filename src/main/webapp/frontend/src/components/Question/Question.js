@@ -10,7 +10,6 @@ const Question = ({
   setCurrQues,
   questions,
   options,
-  //correct,
   setScore,
   score,
   setQuestions,
@@ -35,9 +34,7 @@ const Question = ({
 
     setSelected(i);
 
-    // if (i === correct) setScore(score + 1);
-    // setError(false);
-    
+ 
     axios.post(`http://localhost:8080/api/checkanswer/${currQues}`,
                  {
                    "userAnswer": i                                      
