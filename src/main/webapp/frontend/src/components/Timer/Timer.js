@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
 import { useHistory } from "react-router";
-import Question from "../../components/Question/Question";
 
 function Timer({ expiryTimestamp }) {
   
