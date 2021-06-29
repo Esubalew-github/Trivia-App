@@ -8,15 +8,20 @@ import "./Quiz.css";
 const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
+  const [loading, setLoading] = useState(false);
       
   useEffect(() => {
-    setOptions(
+    
+   setOptions(
       questions &&
         handleShuffle([
           questions[currQues]?.correct_answer,
           ...questions[currQues]?.incorrect_answers,
         ])
     );
+
+  setLoading(true)
+  
   }, [currQues, questions]);
 
 
@@ -27,15 +32,26 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
   return (
     <div className="quiz">
       <span className="subtitle">Welcome, {name}</span>
-      <span className="timer"> {<Timer/>}</span>
-     
+    {loading?  
+      (<span className="timer" >         
+        
+      <Timer/>
+         
+      </span>
+
+      ):(
+        <p>
+          LOADING...
+        </p>
+      )}
       {questions ? (
         <>
           <div className="quizInfo">
             <span> {questions[currQues].category}</span>
              
              <span>
-                Score : {score}
+        
+                 Score : {score}
             </span>
             
           </div>
@@ -43,12 +59,14 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
             currQues={currQues}
             setCurrQues={setCurrQues}
             questions={questions}
-            options={options}     
+            options={options}                 
             score={score}
             setScore={setScore}
-            setQuestions={setQuestions}
+            setQuestions={setQuestions}   
+     
                  
           />
+          
         </>
       ) : (
         <CircularProgress
@@ -64,6 +82,4 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
 
 export default Quiz;
 
-//: {<span>Time's up!</span>}
 
-                
