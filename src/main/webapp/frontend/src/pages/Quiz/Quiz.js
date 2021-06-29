@@ -35,8 +35,7 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
             <span> {questions[currQues].category}</span>
              
              <span>
-              {/* {questions[currQues].difficulty} */}
-                 Score : {score}
+                Score : {score}
             </span>
             
           </div>
@@ -45,7 +44,6 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
             setCurrQues={setCurrQues}
             questions={questions}
             options={options}     
-            //correct={questions[currQues]?.correct_answer}
             score={score}
             setScore={setScore}
             setQuestions={setQuestions}
