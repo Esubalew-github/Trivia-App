@@ -4,9 +4,7 @@ import { useHistory } from "react-router";
 import Question from "../../components/Question/Question";
 
 function Timer({ expiryTimestamp }) {
-  window.addEventListener('keydown', (event) => {
-    <Question/>
-  });
+  
   const history = useHistory();
   const {
     seconds,
