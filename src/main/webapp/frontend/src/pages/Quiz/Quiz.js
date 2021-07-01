@@ -20,7 +20,8 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
         ])
     );
 
-  setLoading(true)
+    questions && setLoading(true)
+    
   
   }, [currQues, questions]);
 
@@ -32,19 +33,8 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
   return (
     <div className="quiz">
       <span className="subtitle">Welcome, {name}</span>
-    {loading?  
-      (<span className="timer" >         
-        
-      <Timer/>
-         
-      </span>
-
-      ):(
-        <p>
-          LOADING...
-        </p>
-      )}
-      {questions ? (
+    {loading? (<span className="timer"> <Timer/> </span>): (<p className="loading"> LOADING... </p>)} 
+     {questions ? (
         <>
           <div className="quizInfo">
             <span> {questions[currQues].category}</span>
