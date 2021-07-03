@@ -20,7 +20,7 @@ const Quiz = ({ name, questions, score, setScore, setQuestions}) => {
         ])
     );
 
-    questions && setLoading(true)
+    setLoading(questions && true)
     
   
   }, [currQues, questions]);
