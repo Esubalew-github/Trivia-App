@@ -49,7 +49,7 @@ const Question = ({
   };
 
   const handleNext = () => {
-    if (currQues > 3) {
+    if (currQues > 3 && selected) {
       history.push("/result");
     } else if (selected) {
       setCurrQues(currQues + 1);
