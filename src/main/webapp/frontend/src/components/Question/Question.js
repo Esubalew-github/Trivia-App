@@ -100,7 +100,7 @@ const Question = ({
             style={{ width: 185 }}
             onClick={handleNext}
           >
-            {currQues > 5 ? "Submit" : "Next Question"}
+            {currQues > 3 ? "Submit" : "Next Question"}
           </Button>
         </div>
       </div>
