@@ -23,7 +23,7 @@ public class QuizController {
 
     @GetMapping(path = "/questions", produces = APPLICATION_JSON_VALUE)
 
-    public ResponseEntity<Object> getQuestion(@RequestParam Map<String, String> json) throws InterruptedException {
+    public ResponseEntity<Object> getQuestion(@RequestParam Map<String, String> json) {
 
         questionRepo = webServiceRepository.getTriviaResult(json.get("category"), json.get("difficulty"))
                 .subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).blockingGet().getQuestions();
