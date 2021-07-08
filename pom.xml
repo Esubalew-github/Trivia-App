@@ -68,13 +68,6 @@
   <version>2.7.0</version>
 </dependency>
 
-<!-- mockwebserver -->
-<dependency>
-  <groupId>com.squareup.okhttp3</groupId>
-  <artifactId>mockwebserver</artifactId>
-  <version>4.9.0</version>
-  <scope>test</scope>
-</dependency>
 
 <dependency>
     <groupId>com.google.code.gson</groupId>
